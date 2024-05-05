@@ -1,0 +1,19 @@
+# Greedy Algorithms (Selection Sort Example Implementation)
+#Selection Sort
+
+def greedy_selection_sort(items):
+    n = len(items)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if items[min_idx][1] > items[j][1]:  # Assuming item structure is (item, weight)
+                min_idx = j
+        items[i], items[min_idx] = items[min_idx], items[i]
+    return items
+
+# Example usage
+items = [('item1', 12), ('item2', 5), ('item3', 20), ('item4', 2)]
+sorted_items = greedy_selection_sort(items)
+print("Items sorted by weight:", sorted_items)
+
+
