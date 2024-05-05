@@ -1,0 +1,47 @@
+# Geometric Algorithms (Example Implementations)
+#Range Sort
+def range_sort(points):
+    # Define a function to calculate the distance from the origin (0, 0)
+    def distance_from_origin(point):
+        return math.sqrt(point[0]**2 + point[1]**2)
+
+    # Sort points based on the calculated distance
+    points.sort(key=distance_from_origin)
+    return points
+
+# Example usage
+points = [(1, 1), (3, 4), (2, 2), (5, 1), (0, 0)]
+sorted_by_range = range_sort(points.copy())
+print("Points sorted by range from origin:", sorted_by_range)
+def angular_sort(points, origin=None):
+    if origin is None:
+        origin = (0, 0)
+    origin_x, origin_y = origin
+    
+    def sort_key(point):
+        # Calculate angle from the origin
+        return math.atan2(point[1] - origin_y, point[0] - origin_x)
+    
+    points.sort(key=sort_key)
+    return points
+
+# Example usage:
+points = [(1, 1), (1, 2), (0, 1), (-1, 1), (-1, -1), (1, -1)]
+sorted_points = angular_sort(points.copy(), origin=(0, 0))
+print("Points sorted by angle from origin:", sorted_points)
+
+def range_sort(points, dimension='x'):
+    if dimension == 'x':
+        points.sort(key=lambda point: point[0])
+    elif dimension == 'y':
+        points.sort(key=lambda point: point[1])
+    return points
+
+# Example usage:
+points = [(1, 2), (3, 3), (5, 1), (4, 5), (2, 4)]
+sorted_by_x = range_sort(points.copy(), dimension='x')
+sorted_by_y = range_sort(points.copy(), dimension='y')
+
+print("Points sorted by x-coordinate:", sorted_by_x)
+print("Points sorted by y-coordinate:", sorted_by_y)
+
