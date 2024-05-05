@@ -1,0 +1,8 @@
+├── Searching-Algorithms/
+│   ├── README.md   # Describes what searching algorithms are and lists each algorithm in the directory.
+│   ├── Binary Search/
+│   │   ├── README.md   # Details about binary search
+│   │   └── binary_search.py  # Implementation of binary search.
+│   └── Linear Search/
+│       ├── README.md   # Details about linear sort
+│       └── linear_search.py  # Implementation of linear sort.
