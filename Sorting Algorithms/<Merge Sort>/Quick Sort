@@ -1,0 +1,35 @@
+
+# Example Quick Sorting Algorithms
+    #Quick Sorting
+
+def quick_sort(arr):
+    """
+    Sorts an array in ascending order using the quick sort algorithm.
+
+    Parameters:
+    arr (list): The list of elements to be sorted.
+
+    Returns:
+    list: The sorted list.
+    """
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr.pop()  # Use the last element as the pivot
+        lesser = []  # Elements less than pivot
+        greater = []  # Elements greater than pivot
+
+        for x in arr:
+            if x <= pivot:
+                lesser.append(x)
+            else:
+                greater.append(x)
+
+        return quick_sort(lesser) + [pivot] + quick_sort(greater)
+
+# Example usage
+sample_array = [10, 7, 8, 9, 1, 5]
+sorted_array = quick_sort(sample_array)
+print("Sorted array using Quick Sort:", sorted_array)
+
+
