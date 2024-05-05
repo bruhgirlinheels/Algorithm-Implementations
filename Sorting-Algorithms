@@ -11,24 +11,11 @@
 │       └── bubble_sort.py  # Implementation of bubble sort.
 
 
-# Sorting Algorithms
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
 
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    else:
-        pivot = arr.pop()
-    greater = [x for x in arr if x > pivot]
-    lesser = [x for x in arr if x <= pivot]
-    return quick_sort(lesser) + [pivot] + quick_sort(greater)
 
+
+# Hypothetical Merge Sort
+    #Merge Sort 
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
@@ -59,3 +46,141 @@ def merge_sort(arr):
             j += 1
             k += 1
     return arr
+
+
+#Example Merge Sort
+#Merge Sort 
+
+def merge_sort(arr):
+    """
+    Sorts an array using the merge sort algorithm.
+
+    Parameters:
+    arr (list): The array to sort.
+
+    Returns:
+    list: The sorted array.
+    """
+    if len(arr) > 1:
+        mid = len(arr) // 2  # Finding the mid point of the array
+        left_half = arr[:mid]  # Dividing the elements into two halves
+        right_half = arr[mid:]
+
+        merge_sort(left_half)  # Recursive call on the left half
+        merge_sort(right_half)  # Recursive call on the right half
+
+        i = j = k = 0  # Initialize pointers for left, right, and main array
+
+        # Merge the sorted halves
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        # Checking if any element was left
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+    return arr
+
+# Example usage:
+sample_array = [38, 27, 43, 3, 9, 82, 10]
+sorted_array = merge_sort(sample_array)
+print("Sorted array:", sorted_array)
+
+
+
+
+# Hypotheticsl Quick Sorting Algorithms
+    #Quick Sorting
+
+def quick_sort(arr):
+    """
+    Sorts an array in ascending order using the quick sort algorithm.
+
+    Parameters:
+    arr (list): The list of elements to be sorted.
+
+    Returns:
+    list: The sorted list.
+    """
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr.pop()  # Use the last element as the pivot
+        lesser = []  # Elements less than pivot
+        greater = []  # Elements greater than pivot
+
+        for x in arr:
+            if x <= pivot:
+                lesser.append(x)
+            else:
+                greater.append(x)
+
+        return quick_sort(lesser) + [pivot] + quick_sort(greater)
+
+# Example usage
+sample_array = [10, 7, 8, 9, 1, 5]
+sorted_array = quick_sort(sample_array)
+print("Sorted array using Quick Sort:", sorted_array)
+
+
+
+
+# Hypotheticsl Bubble Sorting Algorithms
+    #Bubble Sorting
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+
+# Example Bubble Sorting Algorithms
+    #Bubble Sorting
+
+def bubble_sort(arr):
+    """
+    Sorts an array in ascending order using the bubble sort algorithm.
+
+    Parameters:
+    arr (list): The list of elements to be sorted.
+
+    Returns:
+    list: The sorted list.
+    """
+    n = len(arr)
+    for i in range(n):
+        # Track whether a swap was made during this pass
+        swapped = False
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                # Swap if the element found is greater than the next element
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        # If no two elements were swapped by inner loop, then break
+        if not swapped:
+            break
+    return arr
+
+# Example usage:
+sample_array = [64, 34, 25, 12, 22, 11, 90]
+sorted_array = bubble_sort(sample_array)
+print("Sorted array using Bubble Sort:", sorted_array)
+
+
+
