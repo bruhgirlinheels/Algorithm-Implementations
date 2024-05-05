@@ -1,0 +1,44 @@
+# Bubble Sort for sorting vertices (Hypothetical Implementation) 
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+# Bubble Sort for sorting vertices (Example Implementation) 
+
+def bubble_sort(edges):
+    n = len(edges)
+    # Perform n-1 passes to sort the array
+    for i in range(n - 1):
+        # Each pass ensures the largest element bubbles up to the correct position
+        for j in range(0, n - i - 1):
+            # Compare adjacent elements and swap if they are in the wrong order
+            if edges[j][2] > edges[j + 1][2]:
+                edges[j], edges[j + 1] = edges[j + 1], edges[j]
+    return edges
+
+# Example Graph Edges (u, v, weight)
+edges = [
+    ('A', 'B', 4),
+    ('A', 'C', 8),
+    ('B', 'C', 5),
+    ('B', 'D', 10),
+    ('C', 'D', 2),
+    ('C', 'E', 18),
+    ('D', 'E', 6)
+]
+
+# Sort edges by weight using Bubble Sort
+sorted_edges = bubble_sort(edges.copy())
+
+# Function to display sorted edges
+def display_sorted_edges(edges):
+    print("Edges sorted by weight:")
+    for u, v, weight in edges:
+        print(f"{u} -> {v} with weight {weight}")
+
+# Display sorted edges
+display_sorted_edges(sorted_edges)
