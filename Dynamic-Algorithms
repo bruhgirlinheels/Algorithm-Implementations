@@ -1,0 +1,8 @@
+├── Dynamic-Algorithms/ 
+│   ├── README.md   # Describes what dynamic algorithms are and lists each algorithm in the directory.
+│   ├── Insertion Sort/ 
+│   │   ├── README.md  # Details about insertion sort
+│   │   └── insertion_sort.py  # Implementation of insertion sort.
+│   └── Bubble Sort/
+│       ├── README.md   # Details about bubble sort
+│       └── bubble_sort.py  # Implementation of bubble sort.
