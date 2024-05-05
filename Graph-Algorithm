@@ -1,11 +1,94 @@
 ├── Graph-Algorithms/
 │   ├── README.md   # Describes what graphing algorithms are and lists each algorithm in the directory.
-│   ├── Minchew's Algorithm/
+│   ├── Dijkstra's Algorithm/
 │   │   ├── README.md 
-│   │   └── minchew.py
+│   │   └── dijkstras.py
 │   ├── Quick Sort/
 │   │   ├── README.md  # Details about quick sort
 │   │   └── quick_sort.py  # Implementation of quick sort.
 │   └── Bubble Sort/
 │       ├── README.md  # Details about bubble sort
 │       └── bubble_sort.py  # Implementation of bubble sort.
+
+
+# Graph Algorithms (Using Sorting)
+def graph_algorithm_using_sort(arr, sort_function):
+    # Sort and then perform a hypothetical graph operation
+    sorted_arr = sort_function(arr)
+    # Hypothetical operation: count unique elements (simplified example)
+    unique_elements = len(set(sorted_arr))
+    return unique_elements
+import heapq
+
+# Quick Sort for sorting edges based on weight
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr.pop()
+    greater = [x for x in arr if x[2] > pivot[2]]
+    lesser = [x for x in arr if x[2] <= pivot[2]]
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)
+
+# Bubble Sort for sorting vertices
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+# Dijkstra's Algorithm to find the shortest path
+def dijkstra(graph, start_vertex):
+    distances = {vertex: float('infinity') for vertex in graph}
+    distances[start_vertex] = 0
+    priority_queue = [(0, start_vertex)]
+
+    while priority_queue:
+        current_distance, current_vertex = heapq.heappop(priority_queue)
+        if current_distance > distances[current_vertex]:
+            continue
+
+        for neighbor, weight in graph[current_vertex].items():
+            distance = current_distance + weight
+
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(priority_queue, (distance, neighbor))
+
+    return distances
+
+# Example graph using an edge list
+edges = [
+    ('A', 'B', 4),
+    ('A', 'C', 1),
+    ('B', 'C', 2),
+    ('B', 'D', 5),
+    ('C', 'D', 8),
+    ('C', 'E', 10)
+]
+
+# Sorting edges by weights using Quick Sort
+sorted_edges = quick_sort(edges.copy())
+
+# Constructing graph from sorted edges
+graph = {}
+for u, v, w in sorted_edges:
+    if u not in graph:
+        graph[u] = {}
+    if v not in graph:
+        graph[v] = {}
+    graph[u][v] = w
+    graph[v][u] = w
+
+# Sorting vertices using Bubble Sort
+sorted_vertices = bubble_sort(list(graph.keys()))
+
+# Applying Dijkstra's algorithm from the first sorted vertex
+start_vertex = sorted_vertices[0]
+shortest_paths = dijkstra(graph, start_vertex)
+
+print("Graph vertices in sorted order:", sorted_vertices)
+print("Edges sorted by weights:", sorted_edges)
+print(f"Shortest paths from vertex {start_vertex}:", shortest_paths)
