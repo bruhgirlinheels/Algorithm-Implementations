@@ -1,0 +1,8 @@
+├── Greedy-Algorithms/
+│   ├── README.md  # Describes what greedy algorithms are and lists each algorithm in the directory.
+│   ├── Selection Sort/
+│   │   ├── README.mdb # Details about selection sort
+│   │   └── selection_sort.py  # Implementation of selection sort.
+│   └── Ratio-Based Sorting/
+│       ├── README.md  # Details about ratio-based sort
+│       └── ratio-based_sorting.py  # Implementation of ratio-based sort.
