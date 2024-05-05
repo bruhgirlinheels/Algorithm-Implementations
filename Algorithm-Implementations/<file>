@@ -1,0 +1,68 @@
+algorithm-implementations/
+│
+├── Sorting-Algorithms/
+│   ├── README.md  # Describes what sorting algorithms are and lists each algorithm in the directory.
+│   ├── Merge Sort/
+│   │   ├── README.md  # Details about merge sort, including complexity and use cases.
+│   │   └── merge_sort.py  # Implementation of merge sort.
+│   ├── Quick Sort/
+│   │   ├── README.md  # Details about quick sort
+│   │   └── quick_sort.py   # Implementation of quick sort.
+│   └── Bubble Sort/
+│       ├── README.md  # Details about bubble sort
+│       └── bubble_sort.py  # Implementation of bubble sort.
+│
+│
+├── Searching-Algorithms/
+│   ├── README.md   # Describes what searching algorithms are and lists each algorithm in the directory.
+│   ├── Binary Search/
+│   │   ├── README.md   # Details about binary search
+│   │   └── binary_search.py  # Implementation of binary search.
+│   └── Linear Search/
+│       ├── README.md   # Details about linear sort
+│       └── linear_search.py  # Implementation of linear sort.
+│
+├── Graph-Algorithms/
+│   ├── README.md   # Describes what graphing algorithms are and lists each algorithm in the directory.
+│   ├── Minchew's Algorithm/
+│   │   ├── README.md 
+│   │   └── minchew.py
+│   ├── Quick Sort/
+│   │   ├── README.md  # Details about quick sort
+│   │   └── quick_sort.py  # Implementation of quick sort.
+│   └── Bubble Sort/
+│       ├── README.md  # Details about bubble sort
+│       └── bubble_sort.py  # Implementation of bubble sort.
+│
+│
+├── Dynamic-Algorithms/ 
+│   ├── README.md   # Describes what dynamic algorithms are and lists each algorithm in the directory.
+│   ├── Insertion Sort/ 
+│   │   ├── README.md  # Details about insertion sort
+│   │   └── insertion_sort.py  # Implementation of insertion sort.
+│   └── Bubble Sort/
+│       ├── README.md   # Details about bubble sort
+│       └── bubble_sort.py  # Implementation of bubble sort.
+│
+│
+├── Greedy-Algorithms/
+│   ├── README.md  # Describes what greedy algorithms are and lists each algorithm in the directory.
+│   ├── Selection Sort/
+│   │   ├── README.mdb # Details about selection sort
+│   │   └── selection_sort.py  # Implementation of selection sort.
+│   └── Ratio-Based Sorting/
+│       ├── README.md  # Details about ratio-based sort
+│       └── ratio-based_sorting.py  # Implementation of ratio-based sort.
+│
+│
+├── Geometric-Algorithms/
+│   ├── README.md  # Describes what geometric algorithms are and lists each algorithm in the directory.
+│   ├── Range Sort/
+│   │   ├── README.md  # Details about range sort
+│   │   └── range_sort.pyb # Implementation of range sort.
+│   └── Angular Sort/
+│       ├── README.md  # Details about angular sort
+│       └── angular_sort.py  # Implementation of angular sort.
+
+
+
