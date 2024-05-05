@@ -1,0 +1,63 @@
+#Quick Sort (Example Implementation)
+
+def quick_sort(edges):
+    if len(edges) <= 1:
+        return edges
+    else:
+        pivot = edges.pop()
+    greater = [x for x in edges if x[2] > pivot[2]]
+    lesser = [x for x in edges if x[2] <= pivot[2]]
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)
+
+# Example Graph Edges (u, v, weight)
+edges = [
+    ('A', 'B', 4),
+    ('A', 'C', 8),
+    ('B', 'C', 5),
+    ('B', 'D', 10),
+    ('C', 'D', 2),
+    ('C', 'E', 18),
+    ('D', 'E', 6)
+]
+
+# Sort edges by weight using Quick Sort
+sorted_edges = quick_sort(edges)
+
+# Function to display sorted edges
+def display_sorted_edges(edges):
+    print("Edges sorted by weight:")
+    for u, v, weight in edges:
+        print(f"{u} -> {v} with weight {weight}")
+
+# Display sorted edges
+display_sorted_edges(sorted_edges)
+
+# Sorting vertices using Bubble Sort
+sorted_vertices = bubble_sort(list(graph.keys()))
+
+# Applying Dijkstra's algorithm from the first sorted vertex
+start_vertex = sorted_vertices[0]
+shortest_paths = dijkstra(graph, start_vertex)
+
+print("Graph vertices in sorted order:", sorted_vertices)
+print("Edges sorted by weights:", sorted_edges)
+print(f"Shortest paths from vertex {start_vertex}:", shortest_paths)
+
+# Graph Algorithms (Hypotetical Using Sorting)
+def graph_algorithm_using_sort(arr, sort_function):
+    # Sort and then perform a hypothetical graph operation
+    sorted_arr = sort_function(arr)
+    # Hypothetical operation: count unique elements (simplified example)
+    unique_elements = len(set(sorted_arr))
+    return unique_elements
+import heapq
+
+# Quick Sort for sorting edges based on weight
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr.pop()
+    greater = [x for x in arr if x[2] > pivot[2]]
+    lesser = [x for x in arr if x[2] <= pivot[2]]
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)
