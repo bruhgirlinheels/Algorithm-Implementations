@@ -1,0 +1,11 @@
+├── Graph-Algorithms/
+│   ├── README.md   # Describes what graphing algorithms are and lists each algorithm in the directory.
+│   ├── Minchew's Algorithm/
+│   │   ├── README.md 
+│   │   └── minchew.py
+│   ├── Quick Sort/
+│   │   ├── README.md  # Details about quick sort
+│   │   └── quick_sort.py  # Implementation of quick sort.
+│   └── Bubble Sort/
+│       ├── README.md  # Details about bubble sort
+│       └── bubble_sort.py  # Implementation of bubble sort.
