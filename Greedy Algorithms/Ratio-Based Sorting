@@ -1,0 +1,26 @@
+# Greedy Algorithms (Ratio-Based Sorting Example Implementation)
+# Ratio-Based Sorting
+
+def fractional_knapsack(value, weight, capacity):
+    # Create a list of (index, value, weight, ratio)
+    index = list(range(len(value)))
+    ratio = [v/w for v, w in zip(value, weight)]
+    # Sort by value-to-weight ratio in descending order
+    index.sort(key=lambda i: ratio[i], reverse=True)
+    
+    max_value = 0
+    for i in index:
+        if weight[i] <= capacity:
+            max_value += value[i]
+            capacity -= weight[i]
+        else:
+            max_value += value[i] * (capacity / weight[i])
+            break
+    return max_value
+
+# Example usage
+value = [60, 100, 120]  # Value of items
+weight = [10, 20, 30]  # Weight of items
+capacity = 50  # Max weight capacity
+max_val = fractional_knapsack(value, weight, capacity)
+print("Maximum value in the knapsack =", max_val)
