@@ -1,0 +1,32 @@
+def bubble_sort_with_dynamic_optimization(arr):
+    """
+    Performs bubble sort on a list while tracking the number of swaps, and uses this information
+    dynamically to potentially minimize sorting operations.
+
+    Parameters:
+    arr (list): The list of elements to be sorted.
+
+    Returns:
+    tuple: The sorted list and the total number of swaps made.
+    """
+    n = len(arr)
+    total_swaps = 0
+    for i in range(n):
+        # Early exit flag for optimized Bubble Sort
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # Swap if elements are in wrong order
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+                total_swaps += 1
+        # If no two elements were swapped by the inner loop, then break
+        if not swapped:
+            break
+    return arr, total_swaps
+
+# Example usage:
+sample_array = [64, 34, 25, 12, 22, 11, 90]
+sorted_array, swap_count = bubble_sort_with_dynamic_optimization(sample_array)
+print("Sorted array using Bubble Sort with dynamic optimization:", sorted_array)
+print("Total number of swaps:", swap_count)
