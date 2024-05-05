@@ -1,0 +1,11 @@
+├── Sorting-Algorithms/
+│   ├── README.md  # Describes what sorting algorithms are and lists each algorithm in the directory.
+│   ├── Merge Sort/
+│   │   ├── README.md  # Details about merge sort, including complexity and use cases.
+│   │   └── merge_sort.py  # Implementation of merge sort.
+│   ├── Quick Sort/
+│   │   ├── README.md  # Details about quick sort
+│   │   └── quick_sort.py   # Implementation of quick sort.
+│   └── Bubble Sort/
+│       ├── README.md  # Details about bubble sort
+│       └── bubble_sort.py  # Implementation of bubble sort.
