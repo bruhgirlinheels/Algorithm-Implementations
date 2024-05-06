@@ -24,9 +24,9 @@ algorithm-implementations/
 │
 ├── Graph-Algorithms/
 │   ├── README.md   # Describes what graphing algorithms are and lists each algorithm in the directory.
-│   ├── Minchew's Algorithm/
+│   ├── Dijkstra's Algorithm/
 │   │   ├── README.md 
-│   │   └── minchew.py
+│   │   └── dijkstras.py
 │   ├── Quick Sort/
 │   │   ├── README.md  # Details about quick sort
 │   │   └── quick_sort.py  # Implementation of quick sort.
